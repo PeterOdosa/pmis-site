@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>P-MAN Integrated Services Nigeria Limited | Agro-services, Construction and Capacity Building</title>
+<meta name="description" content="P-MAN Integrated Services (PMIS NIG. LTD) delivers agricultural services, sustainable farm projects, civil engineering solutions and human capacity development across Nigeria.">
+<meta name="theme-color" content="#0C3220">
+<!-- STAGING ONLY: delete the next line when the site goes live, or Google will not index it -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/main.js" defer></script>
+</head>
+<body id="top">
+
+<!-- Icon sprite: each symbol id (i-sprout, i-pin, ...) is used below via an svg "use" element with class "icon" -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-sprout" viewBox="0 0 24 24"><path d="M12 21v-9"/><path d="M12 12c0-4 3-6 7-6 0 4-3 6-7 6z"/><path d="M12 14c0-3-2-5-6-5 0 3 2 5 6 5z"/></symbol>
+  <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4h6v3H9z"/><path d="M9 12h6M9 16h4"/></symbol>
+  <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.5 2.5-6 6-6s6 2.5 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M17 14c2.5 0 4 2 4 5"/></symbol>
+  <symbol id="i-building" viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V10l7-5 7 5v11"/><path d="M10 21v-6h4v6"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11z"/><circle cx="12" cy="10" r="2.2"/></symbol>
+</svg>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="logo" href="index.html" aria-label="PMIS home">
+      <img class="logo__mark" src="images/logo.png" alt="" width="56" height="56">
+      <span class="logo__text"><strong>PMIS</strong><small>P-MAN Integrated Services</small></span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <svg class="icon icon--open" aria-hidden="true"><use href="#i-menu"/></svg>
+      <svg class="icon icon--close" aria-hidden="true"><use href="#i-close"/></svg>
+    </button>
+
+    <nav id="site-nav" class="nav" aria-label="Main">
+      <ul class="nav__list">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="blog.html">Blog</a></li><!-- TODO: point to the WordPress blog URL when it is live -->
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a class="btn btn--dark nav__cta" href="contact.html">Let's talk</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="container hero__inner">
+    <div class="hero__grid">
+      <div class="hero__copy">
+        <span class="eyebrow eyebrow--gold">Agro-services · Construction · Capacity building</span>
+        <h1 class="h1">Farms, infrastructure and <span class="accent">the people to run them.</span></h1>
+        <p class="hero__lead">P-MAN Integrated Services delivers innovative agricultural services, sustainable farm projects, civil engineering solutions and human capacity development for lasting impact.</p>
+        <div class="hero__actions">
+          <a class="btn btn--gold" href="services.html">Explore our services</a>
+          <a class="btn btn--outline-light" href="contact.html">Request a consultation</a>
+        </div>
+      </div>
+
+      <!-- PHOTO: replace .ph classes with an <img> (see README) -->
+      <div class="media hero__media ph ph--hero">
+        <span class="ph__tag">Photo · Tractor working a green field</span>
+        <div class="hero__card">
+          <strong>End-to-end delivery</strong>
+          <span>From land preparation to harvest, and from roads to schools.</span>
+        </div>
+      </div>
+    </div>
+
+    <ul class="pillars">
+      <li><span class="pillars__label">Serving clients</span><span class="pillars__value">Within and outside Nigeria</span></li>
+      <li><span class="pillars__label">Our standard</span><span class="pillars__value">Expertise, integrity and innovation</span></li>
+      <li><span class="pillars__label">Our focus</span><span class="pillars__value">Impact, not just output</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="section">
+  <div class="container about__grid">
+    <div class="stack stack--lg about__copy">
+      <span class="eyebrow">Who we are</span>
+      <h2 class="h2">A multi-service Nigerian company building farms, roads and capacity.</h2>
+      <p class="lead">PMIS NIG. LTD is committed to transforming Nigeria's agricultural and infrastructure landscapes. With a focus on plantation establishment, agro consultancy, engineering, construction and capacity building, we deliver end-to-end solutions that create value, promote sustainability and build a prosperous future.</p>
+      <a class="btn btn--outline" href="about.html">More about us →</a>
+    </div>
+
+    <div class="stack about__panels">
+      <div class="panel">
+        <span class="panel__bar"></span>
+        <h3 class="eyebrow">Our vision</h3>
+        <p>To be a dependable leader in agro-service delivery to farmers and agro businesses in Nigeria.</p>
+        <p>To be one of the front-line leaders in civil construction and human capacity development in Nigeria.</p>
+      </div>
+      <div class="panel">
+        <span class="panel__bar"></span>
+        <h3 class="eyebrow">Our mission</h3>
+        <ul class="dots">
+          <li>Satisfy our customers' requirements in terms of prices and delays.</li>
+          <li>Provide good quality services that are profitable to investors and customers, ensuring good returns on investment.</li>
+          <li>Provide our employees with a good working environment and conditions.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<!-- TODO: replace the [00] placeholders with real figures from the client -->
+<section class="section section--white section--band" aria-label="PMIS in numbers">
+  <div class="container stats">
+    <div class="stat"><span class="stat__num">[00]+</span><span class="stat__label">Projects delivered</span></div>
+    <div class="stat"><span class="stat__num">[00]</span><span class="stat__label">Hectares established</span></div>
+    <div class="stat"><span class="stat__num">[00]+</span><span class="stat__label">Years in operation</span></div>
+    <div class="stat"><span class="stat__num">[00]+</span><span class="stat__label">Clients served</span></div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section id="services" class="section">
+  <div class="container">
+    <div class="section-head">
+      <div class="stack">
+        <span class="eyebrow">Our services</span>
+        <h2 class="h2 section-head__title">Six services, one dependable partner for your project.</h2>
+      </div>
+      <a class="btn btn--dark" href="contact.html">Book a service</a>
+    </div>
+
+    <!-- TODO: each "Learn more" link can point to its own service page later (for example services/farm-establishment.html) -->
+    <div class="grid-3 services">
+
+      <article class="card service">
+        <div class="media ph ph--a" role="img" aria-label="Young crop rows"><span class="ph__tag">Photo · Young crop rows</span></div>
+        <div class="service__body">
+          <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-sprout"/></svg></span>
+          <span class="service__num">01</span>
+          <h3 class="h3">Farm &amp; Plantation Establishment</h3>
+          <p>From land preparation to harvesting, we create thriving farms using modern practices.</p>
+          <a class="link" href="services.html">Learn more →</a>
+        </div>
+      </article>
+
+      <article class="card service">
+        <div class="media ph ph--b" role="img" aria-label="Consultant and farmer"><span class="ph__tag">Photo · Consultant and farmer</span></div>
+        <div class="service__body">
+          <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-clipboard"/></svg></span>
+          <span class="service__num">02</span>
+          <h3 class="h3">Agro Consultancy &amp; Project Management</h3>
+          <p>Optimizing farm operations, land planning, infrastructure, and productivity.</p>
+          <a class="link" href="services.html">Learn more →</a>
+        </div>
+      </article>
+
+      <article class="card service">
+        <div class="media ph ph--d" role="img" aria-label="Field training session"><span class="ph__tag">Photo · Field training session</span></div>
+        <div class="service__body">
+          <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-people"/></svg></span>
+          <span class="service__num">03</span>
+          <h3 class="h3">Human Capacity Development</h3>
+          <p>Empowering agro-professionals through training, recruitment, and development programs.</p>
+          <a class="link" href="services.html">Learn more →</a>
+        </div>
+      </article>
+
+      <article class="card service">
+        <div class="media ph ph--c" role="img" aria-label="Completed building"><span class="ph__tag">Photo · Completed building</span></div>
+        <div class="service__body">
+          <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg></span>
+          <span class="service__num">04</span>
+          <h3 class="h3">Civil / Building Construction</h3>
+          <p>Roads, drains, schools, hospitals. PMIS builds functional infrastructure across Nigeria.</p>
+          <a class="link" href="services.html">Learn more →</a>
+        </div>
+      </article>
+
+      <article class="card service">
+        <div class="media ph ph--f" role="img" aria-label="Tractor with implement"><span class="ph__tag">Photo · Tractor with implement</span></div>
+        <div class="service__body">
+          <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-gear"/></svg></span>
+          <span class="service__num">05</span>
+          <h3 class="h3">Agro Engineering &amp; Tools Supply</h3>
+          <p>Supplying farm machinery, chemicals, irrigation systems, and protective materials.</p>
+          <a class="link" href="services.html">Learn more →</a>
+        </div>
+      </article>
+
+      <article class="card service">
+        <div class="media ph ph--e" role="img" aria-label="Open farmland"><span class="ph__tag">Photo · Open farmland</span></div>
+        <div class="service__body">
+          <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
+          <span class="service__num">06</span>
+          <h3 class="h3">Agro Land Sourcing</h3>
+          <p>Finding and facilitating land acquisition for agricultural investments.</p>
+          <a class="link" href="services.html">Learn more →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS + TESTIMONIAL ============ -->
+<!-- TODO: replace all [bracketed] placeholders with real projects and a real client quote -->
+<section class="section section--dark">
+  <div class="container">
+    <div class="section-head section-head--stack">
+      <span class="eyebrow eyebrow--gold">Selected projects</span>
+      <h2 class="h2">Proof on the ground.</h2>
+    </div>
+
+    <div class="grid-3 projects">
+      <article class="card card--dark project">
+        <div class="media ph ph--a" role="img" aria-label="Project photo"><span class="ph__tag">Photo · Project</span></div>
+        <div class="project__body">
+          <span class="chip chip--gold">[Service type]</span>
+          <h3 class="h3">[Project name]</h3>
+          <span class="muted-light">[Location] · [Year]</span>
+        </div>
+      </article>
+      <article class="card card--dark project">
+        <div class="media ph ph--c" role="img" aria-label="Project photo"><span class="ph__tag">Photo · Project</span></div>
+        <div class="project__body">
+          <span class="chip chip--gold">[Service type]</span>
+          <h3 class="h3">[Project name]</h3>
+          <span class="muted-light">[Location] · [Year]</span>
+        </div>
+      </article>
+      <article class="card card--dark project">
+        <div class="media ph ph--d" role="img" aria-label="Project photo"><span class="ph__tag">Photo · Project</span></div>
+        <div class="project__body">
+          <span class="chip chip--gold">[Service type]</span>
+          <h3 class="h3">[Project name]</h3>
+          <span class="muted-light">[Location] · [Year]</span>
+        </div>
+      </article>
+    </div>
+
+    <figure class="quote">
+      <blockquote><p>“[Client testimonial: one or two sentences on the result they got from working with PMIS.]”</p></blockquote>
+      <figcaption class="muted-light">[Client name] · [Role, company]</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ PARTNERS ============ -->
+<!-- TODO: swap the text wordmarks for the real logos (use <img> in greyscale, same height) -->
+<section class="section section--partners">
+  <div class="container">
+    <h2 class="h2 h2--sm center">Our partners and collaborators</h2>
+    <ul class="partners">
+      <li class="partner">IMONIYAME</li>
+      <li class="partner">OKOMU</li>
+      <li class="partner partner--long">RUBBER RESEARCH INSTITUTE OF NIGERIA</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section id="contact" class="cta">
+  <div class="container cta__inner">
+    <div class="stack cta__copy">
+      <h2 class="cta__title">Let's work together.</h2>
+      <p>Ready to transform your agricultural investment or infrastructure project? We offer consultations, feasibility studies, project design and execution tailored to your goals.</p>
+    </div>
+    <div class="cta__actions">
+      <a class="btn btn--dark" href="mailto:info@pmisng.com">Contact us</a>
+      <a class="btn btn--outline-dark" href="tel:+2348100010657">Call +234 (0) 8100010657</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BLOG ============ -->
+<!-- TODO: replace these three cards with the real posts, or the WordPress feed later -->
+<section id="blog" class="section">
+  <div class="container">
+    <div class="section-head section-head--row">
+      <h2 class="h2">From our blog</h2>
+      <a class="link" href="blog.html">View all posts →</a>
+    </div>
+
+    <div class="grid-3 posts">
+      <article class="card post">
+        <div class="media ph ph--f" role="img" aria-label="Seedling in soil"><span class="ph__tag">Photo · Seedling in soil</span></div>
+        <div class="post__body">
+          <span class="chip">Investment</span>
+          <h3 class="h3 h3--sm"><a href="blog.html">Why Investing in Nigerian Agriculture is the Future</a></h3>
+          <span class="post__date">[Date]</span>
+        </div>
+      </article>
+      <article class="card post">
+        <div class="media ph ph--d" role="img" aria-label="Sprinkler irrigation"><span class="ph__tag">Photo · Sprinkler irrigation</span></div>
+        <div class="post__body">
+          <span class="chip">Irrigation</span>
+          <h3 class="h3 h3--sm"><a href="blog.html">How to Improve Irrigation Efficiency with Modern Tools</a></h3>
+          <span class="post__date">[Date]</span>
+        </div>
+      </article>
+      <article class="card post">
+        <div class="media ph ph--b" role="img" aria-label="Farm workers in the field"><span class="ph__tag">Photo · Farm workers in field</span></div>
+        <div class="post__body">
+          <span class="chip">Farm practice</span>
+          <h3 class="h3 h3--sm"><a href="blog.html">5 Common Farm Mistakes and How to Avoid Them</a></h3>
+          <span class="post__date">[Date]</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<!-- TODO: confirm these answers with the client before launch -->
+<section id="faq" class="section section--white section--band">
+  <div class="container faq__grid">
+    <div class="stack stack--lg">
+      <span class="eyebrow">FAQ</span>
+      <h2 class="h2">Questions, answered.</h2>
+      <a class="link" href="faq.html">See all FAQs →</a>
+    </div>
+    <div class="faq__list">
+      <details>
+        <summary>What services does PMIS offer?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <p>We offer farm and plantation establishment, agro consultancy and project management, human capacity development, civil and building construction, agro engineering and tools supply, and agro land sourcing.</p>
+      </details>
+      <details>
+        <summary>Do you work with clients outside Nigeria?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <p>Yes. We serve clients within and outside Nigeria.</p>
+      </details>
+      <details>
+        <summary>How do I book a consultation?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <p>Use the Contact button, call or email us, and we will arrange a consultation to discuss your goals.</p>
+      </details>
+      <details>
+        <summary>Can you help me find land for an agricultural investment?<svg class="icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+        <p>Yes. Agro land sourcing is one of our services: we find and facilitate land acquisition for agricultural investments.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="stack">
+        <a class="logo logo--light" href="index.html" aria-label="PMIS home">
+          <img class="logo__mark" src="images/logo.png" alt="" width="56" height="56">
+          <span class="logo__text"><strong>PMIS</strong><small>P-MAN Integrated Services</small></span>
+        </a>
+        <p class="footer__about">Agricultural services, sustainable farm projects, civil engineering and human capacity development across Nigeria.</p>
+      </div>
+
+      <nav aria-label="Footer">
+        <h2 class="footer__title">Explore</h2>
+        <ul class="footer__list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <h2 class="footer__title">Services</h2>
+        <ul class="footer__list">
+          <li><a href="services.html">Farm &amp; Plantation Establishment</a></li>
+          <li><a href="services.html">Agro Consultancy &amp; Project Management</a></li>
+          <li><a href="services.html">Human Capacity Development</a></li>
+          <li><a href="services.html">Civil / Building Construction</a></li>
+          <li><a href="services.html">Agro Engineering &amp; Tools Supply</a></li>
+          <li><a href="services.html">Agro Land Sourcing</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="footer__title">Contact us</h2>
+        <ul class="footer__list">
+          <li><a href="tel:+2348100010657">+234 (0) 8100010657</a></li>
+          <li><a href="tel:+2348158506528">+234 (0) 8158506528</a></li>
+          <li><a href="tel:+2348137438381">+234 (0) 8137438381</a></li>
+          <li><a href="mailto:info@pmisng.com">info@pmisng.com</a></li>
+          <li class="footer__address">6, Ogiso Ere Street, off Upper Siluko Rd, Egor, Benin City, Edo State</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© <span id="year">2026</span> PMIS NIG. LTD. All Rights Reserved.</span>
+      <!-- TODO: replace # with the real Telegram, WhatsApp and Facebook links -->
+      <ul class="footer__social">
+        <li><a href="#">Telegram</a></li>
+        <li><a href="#">WhatsApp</a></li>
+        <li><a href="#">Facebook</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
