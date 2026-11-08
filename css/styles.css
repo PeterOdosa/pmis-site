@@ -685,3 +685,30 @@ ul { padding: 0; list-style: none; }
 .lightbox::backdrop { background: rgba(12, 50, 32, 0.88); }
 .lightbox img { display: block; max-width: 96vw; max-height: 88vh; border-radius: 12px; }
 .lightbox__close { position: absolute; top: -14px; right: -14px; width: 40px; height: 40px; border-radius: 50%; border: 0; background: var(--white); color: var(--g900); font-size: 1.5rem; line-height: 1; cursor: pointer; }
+
+/* ---------- EUDR booking page ---------- */
+.page-hero__actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
+.pkgs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.pkg { padding: 32px; gap: 16px; align-items: flex-start; }
+.pkg--feature { border-color: var(--g700); box-shadow: 0 0 0 1px var(--g700); }
+.pkg__price { font-family: var(--font-display); font-size: 2.25rem; font-weight: 700; color: var(--g800); line-height: 1; }
+.pkg__from { font-family: var(--font-body); font-size: 0.9375rem; font-weight: 600; color: var(--muted); margin-right: 4px; }
+.pkgs__note { margin-top: 20px; color: var(--muted); font-size: 0.9375rem; }
+.pkgs__note a { color: var(--g700); font-weight: 600; text-decoration: underline; }
+.booking { display: grid; grid-template-columns: 0.9fr 1.3fr; gap: 48px; align-items: start; }
+.booking .stack a { color: var(--g700); font-weight: 600; text-decoration: underline; }
+.choices { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; border: 0; padding: 0; margin: 0; min-width: 0; }
+.choices legend { font-size: 0.9375rem; font-weight: 600; padding: 0; margin-bottom: 10px; }
+.choice { position: relative; cursor: pointer; }
+.choice input { position: absolute; opacity: 0; inset: 0; }
+.choice span { display: grid; gap: 2px; padding: 14px 16px; border: 1.5px solid var(--line); border-radius: 12px; background: var(--white); }
+.choice small { color: var(--muted); }
+.choice input:checked + span { border-color: var(--g700); box-shadow: 0 0 0 1px var(--g700); background: var(--g100); }
+.choice input:focus-visible + span { outline: 2px solid var(--gold); outline-offset: 2px; }
+.thanks { max-width: 720px; display: grid; gap: 20px; }
+.pay { display: flex; gap: 12px; flex-wrap: wrap; }
+@media (max-width: 900px) { .pkgs, .booking { grid-template-columns: 1fr; } .booking { gap: 32px; } }
+@media (max-width: 560px) { .choices { grid-template-columns: 1fr; } .pkg { padding: 22px; } .pay .btn { width: 100%; } }
+[hidden] { display: none !important; }
+.nav__cta { white-space: nowrap; }
+@media (min-width: 901px) and (max-width: 1100px) { .nav__cta { padding: 0.6rem 1rem; font-size: 0.875rem; } .logo__tag, .logo small { display: none; } }

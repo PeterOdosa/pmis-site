@@ -118,6 +118,30 @@
     dlg.addEventListener('click', function (e) { if (e.target !== big) dlg.close(); });
   }
 
+  // EUDR page: "Book" buttons preselect the package
+  document.querySelectorAll('a[data-pkg]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var r = document.querySelector('input[name="package"][value="' + a.getAttribute('data-pkg') + '"]');
+      if (r) r.checked = true;
+    });
+  });
+
+  // EUDR thanks page: show the reference and the matching pay button
+  var refEl = document.getElementById('ref');
+  if (refEl) {
+    var q = new URLSearchParams(location.search);
+    if (q.get('ref')) refEl.textContent = q.get('ref');
+    var pkg = q.get('pkg');
+    var buttons = document.querySelectorAll('[data-pay]');
+    var live = 0;
+    buttons.forEach(function (b) {
+      var isLive = b.getAttribute('href') && b.getAttribute('href') !== '#';
+      if (pkg && b.getAttribute('data-pay') !== pkg) { b.hidden = true; return; }
+      if (!isLive) b.hidden = true; else live++;
+    });
+    if (!live) { var pend = document.getElementById('pay-pending'); if (pend) pend.classList.add('is-shown'); }
+  }
+
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 })();

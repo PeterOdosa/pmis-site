@@ -6,6 +6,7 @@ Plain HTML, CSS and a little JavaScript. No build step, no dependencies. Desktop
 pmis-site/
 ├── index.html        the homepage (semantic HTML, icon sprite at the top)
 ├── about.html        About Us and Our History (built); team.html, gallery.html, services.html, faq.html, contact.html still to build, see Pages below
+├── book.php          EUDR booking handler (PHP)
 ├── send.php          contact form handler (PHP, runs on cPanel)
 ├── css/styles.css    all styles, design tokens in :root, breakpoints at the bottom
 ├── js/main.js        mobile menu toggle + footer year
@@ -24,6 +25,7 @@ Navigation links go to separate pages, not to sections of the homepage:
 | About, Our Team | `team.html` | built |
 | About, Our Work | `gallery.html` | built (EUDR training and audit portfolio; nav label is "Our Work") |
 | Services | `services.html` | built |
+| EUDR Training & Audit (booking) | `eudr.html`, `eudr-thanks.html`, `book.php` | built, not in the main nav (linked from Services, homepage and footer) |
 | FAQ | `faq.html` | built |
 | Blog | `blog.html` for now | later: point to the WordPress blog URL |
 | Contact | `contact.html` + `send.php` | built |
@@ -89,6 +91,7 @@ On phones, the six service cards hide their photos on purpose (compact layout). 
 - [ ] FAQ page: answers are the old ones plus new EUDR, training and "Where do you work?" answers. Confirm with the client. The old "500+ projects / 99%" stats were dropped (unverified). Keep the FAQPage JSON-LD in sync if questions change
 - [ ] Contact page: `send.php` emails the form to info@p-man.com.ng and needs PHP on the server (standard on cPanel; it will not run in `python3 -m http.server`). Create no-reply@p-man.com.ng in cPanel, send a test message, and check it is not in spam. Page shows info@p-man.com.ng, so confirm which email to publish. Add real WhatsApp, hours or map if wanted
 - [ ] Our Work page: dates, locations and participant counts are `[placeholders]` on all 7 cards. Get permission to name Okomu, Ilusin and Imoniyame and to show participants. Add each engagement's real photos as `<a href="full.jpg" data-lightbox><img ...></a>` for the enlarge view. The EU's EUDR logo from the old page was deliberately not reused
+- [ ] EUDR booking: prices are placeholders (from N200,000 each); confirm what they cover (per participant, session or site). Put the two real Payaza payment links in `eudr-thanks.html` (the `#` hrefs). Until then the page says an invoice will follow. `book.php` emails bookings to info@p-man.com.ng (needs PHP and the no-reply@p-man.com.ng mailbox). Matching payments to bookings is manual until a Payaza webhook is added. Add refund terms, a privacy note and USD pricing before advertising abroad. Do not hard-code EUDR dates
 - [ ] Phone number: the old site shows +234 (0) 8158506528 on the home page and 8158505628 on Our History. Confirm which is right
 - [ ] Add the real Telegram, WhatsApp and Facebook links in the footer
 - [ ] Check the three phone numbers and the email
