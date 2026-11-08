@@ -686,6 +686,19 @@ ul { padding: 0; list-style: none; }
 .lightbox img { display: block; max-width: 96vw; max-height: 88vh; border-radius: 12px; }
 .lightbox__close { position: absolute; top: -14px; right: -14px; width: 40px; height: 40px; border-radius: 50%; border: 0; background: var(--white); color: var(--g900); font-size: 1.5rem; line-height: 1; cursor: pointer; }
 
+/* ---------- Scroll to top ---------- */
+#scroll-top {
+  position: fixed; bottom: 24px; right: 24px; z-index: 10;
+  width: 48px; height: 48px; border-radius: 50%;
+  border: 0; background: var(--g900); color: var(--on-dark);
+  cursor: pointer; opacity: 0; transform: translateY(16px);
+  transition: opacity 0.25s ease, transform 0.25s ease, background-color 0.15s ease;
+  pointer-events: none;
+}
+#scroll-top.is-visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
+#scroll-top:hover { background: var(--g700); }
+#scroll-top .icon { width: 24px; height: 24px; stroke-width: 2; }
+
 /* ---------- EUDR booking page ---------- */
 .page-hero__actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }
 .pkgs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }

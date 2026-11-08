@@ -142,6 +142,33 @@
     if (!live) { var pend = document.getElementById('pay-pending'); if (pend) pend.classList.add('is-shown'); }
   }
 
+  // Scroll-to-top button
+  (function () {
+    var btn = document.createElement('button');
+    btn.id = 'scroll-top';
+    btn.setAttribute('aria-label', 'Back to top');
+    btn.setAttribute('type', 'button');
+    btn.innerHTML = '<svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></svg>';
+    document.body.appendChild(btn);
+
+    var onScroll = function () {
+      btn.classList.toggle('is-visible', window.scrollY > 300);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    btn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Escape closes the button focus
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && document.activeElement === btn) {
+        btn.blur();
+      }
+    });
+  })();
+
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 })();
