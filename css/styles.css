@@ -690,6 +690,7 @@ ul { padding: 0; list-style: none; }
 #scroll-top {
   position: fixed; bottom: 24px; right: 24px; z-index: 10;
   width: 48px; height: 48px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
   border: 0; background: var(--g900); color: var(--on-dark);
   cursor: pointer; opacity: 0; transform: translateY(16px);
   transition: opacity 0.25s ease, transform 0.25s ease, background-color 0.15s ease;
@@ -697,7 +698,11 @@ ul { padding: 0; list-style: none; }
 }
 #scroll-top.is-visible { opacity: 1; transform: translateY(0); pointer-events: auto; }
 #scroll-top:hover { background: var(--g700); }
-#scroll-top .icon { width: 24px; height: 24px; stroke-width: 2; }
+#scroll-top .icon {
+  width: 24px; height: 24px;
+  fill: none; stroke: currentColor; stroke-width: 2.5;
+  stroke-linecap: round; stroke-linejoin: round;
+}
 
 /* ---------- EUDR booking page ---------- */
 .page-hero__actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 24px; }

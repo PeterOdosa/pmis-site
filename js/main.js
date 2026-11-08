@@ -148,7 +148,7 @@
     btn.id = 'scroll-top';
     btn.setAttribute('aria-label', 'Back to top');
     btn.setAttribute('type', 'button');
-    btn.innerHTML = '<svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 15l6-6 6 6"/></svg>';
+    btn.innerHTML = '<svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 16l6-6 6 6"/></svg>';
     document.body.appendChild(btn);
 
     var onScroll = function () {
