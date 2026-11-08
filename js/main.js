@@ -1,0 +1,123 @@
+// PMIS site: mobile menu, About dropdown, footer year. No dependencies.
+(function () {
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.getElementById('site-nav');
+  var subs = nav ? Array.prototype.slice.call(nav.querySelectorAll('.has-sub')) : [];
+
+  var setSub = function (li, open) {
+    li.classList.toggle('is-open', open);
+    var btn = li.querySelector('.sub-toggle');
+    if (btn) btn.setAttribute('aria-expanded', String(open));
+  };
+  var closeSubs = function (except) {
+    subs.forEach(function (li) { if (li !== except) setSub(li, false); });
+  };
+
+  if (toggle && nav) {
+    var setOpen = function (open) {
+      nav.classList.toggle('is-open', open);
+      toggle.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      if (!open) closeSubs();
+    };
+
+    toggle.addEventListener('click', function () {
+      setOpen(!nav.classList.contains('is-open'));
+    });
+
+    // Close the whole menu after tapping a link
+    nav.addEventListener('click', function (e) {
+      if (e.target.closest('a')) setOpen(false);
+    });
+
+    // Reset when resizing up to desktop
+    window.matchMedia('(min-width: 901px)').addEventListener('change', function (e) {
+      if (e.matches) setOpen(false);
+    });
+
+    // Escape closes menus and returns focus to the button that opened them
+    document.addEventListener('keydown', function (e) {
+      if (e.key !== 'Escape') return;
+      var open = subs.filter(function (li) { return li.classList.contains('is-open'); })[0];
+      closeSubs();
+      if (open) {
+        var btn = open.querySelector('.sub-toggle');
+        if (btn) btn.focus();
+      } else {
+        setOpen(false);
+      }
+    });
+  }
+
+  // Submenu buttons
+  subs.forEach(function (li) {
+    var btn = li.querySelector('.sub-toggle');
+    if (btn) {
+      btn.addEventListener('click', function () {
+        var open = !li.classList.contains('is-open');
+        closeSubs(li);
+        setSub(li, open);
+      });
+    }
+    // Close when keyboard focus leaves the item
+    li.addEventListener('focusout', function (e) {
+      if (!li.contains(e.relatedTarget)) setSub(li, false);
+    });
+  });
+
+  // Click outside closes submenus
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.has-sub')) closeSubs();
+  });
+
+  // Contact form: send without leaving the page (falls back to a normal post if JS is off)
+  var form = document.getElementById('contact-form');
+  if (form && window.fetch) {
+    var sent = document.getElementById('sent'), err = document.getElementById('error'), inv = document.getElementById('invalid');
+    var btn = form.querySelector('button[type="submit"]');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      sent.classList.remove('is-shown'); err.classList.remove('is-shown'); inv.classList.remove('is-shown');
+      var bad = null;
+      ['name', 'email', 'message'].forEach(function (id) {
+        var f = form.elements[id];
+        var ok = f.value.trim() && (id !== 'email' || f.checkValidity());
+        f.setAttribute('aria-invalid', ok ? 'false' : 'true');
+        if (!ok && !bad) bad = f;
+      });
+      if (bad) { inv.classList.add('is-shown'); bad.focus(); return; }
+      btn.disabled = true; btn.textContent = 'Sending…';
+      fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          if (d.ok) { sent.classList.add('is-shown'); form.reset(); sent.focus(); } else { err.classList.add('is-shown'); err.focus(); }
+        })
+        .catch(function () { err.classList.add('is-shown'); err.focus(); })
+        .then(function () { btn.disabled = false; btn.textContent = 'Send message'; });
+    });
+  }
+
+  // Photo enlarge view: <a href="full.jpg" data-lightbox><img ...></a>
+  var links = document.querySelectorAll('a[data-lightbox]');
+  if (links.length && window.HTMLDialogElement) {
+    var dlg = document.createElement('dialog');
+    dlg.className = 'lightbox';
+    dlg.setAttribute('aria-label', 'Photo');
+    dlg.innerHTML = '<button class="lightbox__close" type="button" aria-label="Close photo">&times;</button><img alt="">';
+    document.body.appendChild(dlg);
+    var big = dlg.querySelector('img');
+    links.forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        var thumb = a.querySelector('img');
+        big.src = a.href; big.alt = thumb ? thumb.alt : '';
+        dlg.showModal();
+      });
+    });
+    dlg.addEventListener('click', function (e) { if (e.target !== big) dlg.close(); });
+  }
+
+  var year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
+})();
