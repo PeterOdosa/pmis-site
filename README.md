@@ -70,12 +70,14 @@ Every photo is a `.media` box with gradient classes (`ph ph--a` etc.) and a labe
 ```
 
 Use `loading="lazy"` on everything except the hero image. Compress photos first (around 200 KB each, WebP or JPG).
-On phones, the six service cards hide their photos on purpose (compact layout). Delete the `.service .media { display: none; }` rule in the 720px block to show them.
+On phones the service cards show a shorter photo (160px).
+
+Homepage hero photo is done as a worked example: `images/hero-tractor-{640,960,1280}.{webp,jpg}` served through `<picture>` with `srcset`, `width`/`height` set, `fetchpriority="high"` (it is the first thing on screen, so no lazy loading). Reuse that pattern for other photos. Focus point is set with `object-position` on `.hero__img`.
 
 ## TODO before launch
 
-- [ ] Replace the `[00]` stats with real figures (or delete the stats section)
-- [ ] Replace the `[Project name]`, `[Service type]`, `[Location] · [Year]` cards and the `[Client testimonial]` with real content (or delete the section)
+- [ ] Homepage stats: 40+ projects, 1,000+ hectares, 16+ years (counted from 2010, automatic) and 560+ farmers trained. Confirm the 40+ projects figure with the client. The About page says founded 2017, History says 2010: make them agree
+- [ ] Project cards are filled (labour line 2012, Okomu field training 2026, Imoniyame EUDR audit 2026). Confirm consent from people shown in the photos. Replace the `[Client testimonial]` placeholder with a real quote (or delete it)
 - [ ] Swap the partner text wordmarks (Imoniyame, Okomu, Rubber Research Institute of Nigeria) for the real logos
 - [ ] Replace the blog cards (titles are real, dates are `[Date]`) and point the "Blog" nav link and "View all posts" at the live blog URL
 - [ ] Build the other pages (About, Services, FAQ, Contact); "Learn more" currently goes to `services.html`
@@ -92,6 +94,8 @@ On phones, the six service cards hide their photos on purpose (compact layout). 
 - [ ] Contact page: `send.php` emails the form to info@p-man.com.ng and needs PHP on the server (standard on cPanel; it will not run in `python3 -m http.server`). Create no-reply@p-man.com.ng in cPanel, send a test message, and check it is not in spam. Page shows info@p-man.com.ng, so confirm which email to publish. Add real WhatsApp, hours or map if wanted
 - [ ] Our Work page: dates, locations and participant counts are `[placeholders]` on all 7 cards. Get permission to name Okomu, Ilusin and Imoniyame and to show participants. Add each engagement's real photos as `<a href="full.jpg" data-lightbox><img ...></a>` for the enlarge view. The EU's EUDR logo from the old page was deliberately not reused
 - [ ] EUDR booking: prices are placeholders (from N200,000 each); confirm what they cover (per participant, session or site). Put the two real Payaza payment links in `eudr-thanks.html` (the `#` hrefs). Until then the page says an invoice will follow. `book.php` emails bookings to info@p-man.com.ng (needs PHP and the no-reply@p-man.com.ng mailbox). Matching payments to bookings is manual until a Payaza webhook is added. Add refund terms, a privacy note and USD pricing before advertising abroad. Do not hard-code EUDR dates
+- [ ] Homepage and Services page service photos are stock images (some foreign: US tractor, European houses in the land-sourcing photo; the building is a 3D render; the training scene is AI-generated). Replace with real PMIS photos when available, same pattern as `images/svc-*`. The EUDR image is AI-generated (plantation with location pins): swap for a real EUDR training photo when the client has one
+- [ ] Services page hero is a stock photo of tractors (US/European machinery, partial brand text on the trailer). Replace with a real PMIS photo when available; use the `.page-hero--photo` markup in `services.html` for any other page hero
 - [ ] Phone number: the old site shows +234 (0) 8158506528 on the home page and 8158505628 on Our History. Confirm which is right
 - [ ] Add the real Telegram, WhatsApp and Facebook links in the footer
 - [ ] Check the three phone numbers and the email

@@ -88,9 +88,11 @@
         </div>
       </div>
 
-      <!-- PHOTO: replace .ph classes with an <img> (see README) -->
-      <div class="media hero__media ph ph--hero">
-        <span class="ph__tag">Photo · Tractor working a green field</span>
+      <div class="media hero__media">
+        <picture>
+          <source type="image/webp" srcset="images/hero-tractor-640.webp 640w, images/hero-tractor-960.webp 960w, images/hero-tractor-1280.webp 1280w" sizes="(max-width: 900px) 100vw, 600px">
+          <img class="hero__img" src="images/hero-tractor-960.jpg" srcset="images/hero-tractor-640.jpg 640w, images/hero-tractor-960.jpg 960w, images/hero-tractor-1280.jpg 1280w" sizes="(max-width: 900px) 100vw, 600px" width="1280" height="720" alt="A tractor cultivating between rows of young crops on a farm" fetchpriority="high" decoding="async">
+        </picture>
         <div class="hero__card">
           <strong>End-to-end delivery</strong>
           <span>From land preparation to harvest, and from roads to schools.</span>
@@ -137,13 +139,14 @@
 </section>
 
 <!-- ============ STATS ============ -->
-<!-- TODO: replace the [00] placeholders with real figures from the client -->
+<!-- To animate a number, give it data-count="123" (and data-suffix="+"). Years in operation counts up from data-since, so it never goes stale.
+     The text inside each number is the final value, shown if JavaScript is off or the visitor prefers reduced motion. -->
 <section class="section section--white section--band" aria-label="PMIS in numbers">
   <div class="container stats">
-    <div class="stat"><span class="stat__num">[00]+</span><span class="stat__label">Projects delivered</span></div>
-    <div class="stat"><span class="stat__num">[00]</span><span class="stat__label">Hectares established</span></div>
-    <div class="stat"><span class="stat__num">[00]+</span><span class="stat__label">Years in operation</span></div>
-    <div class="stat"><span class="stat__num">[00]+</span><span class="stat__label">Clients served</span></div>
+    <div class="stat"><span class="stat__num" data-count="40" data-suffix="+">40+</span><span class="stat__label">Projects delivered</span></div>
+    <div class="stat"><span class="stat__num" data-count="1000" data-suffix="+">1,000+</span><span class="stat__label">Hectares established</span></div>
+    <div class="stat"><span class="stat__num" data-since="2010" data-suffix="+">16+</span><span class="stat__label">Years in operation</span></div>
+    <div class="stat"><span class="stat__num" data-count="560" data-suffix="+">560+</span><span class="stat__label">Farmers trained</span></div>
   </div>
 </section>
 
@@ -153,7 +156,7 @@
     <div class="section-head">
       <div class="stack">
         <span class="eyebrow">Our services</span>
-        <h2 class="h2 section-head__title">Seven services, one dependable partner for your project.</h2>
+        <h2 class="h2 section-head__title">Everything your project needs, from one dependable partner.</h2>
       </div>
       <a class="btn btn--dark" href="contact.html">Book a service</a>
     </div>
@@ -162,7 +165,7 @@
     <div class="grid-3 services">
 
       <article class="card service">
-        <div class="media ph ph--a" role="img" aria-label="Young crop rows"><span class="ph__tag">Photo · Young crop rows</span></div>
+        <div class="media"><picture><source type="image/webp" srcset="images/svc-farm-640.webp 640w, images/svc-farm-960.webp 960w" sizes="(max-width: 720px) 100vw, (max-width: 1024px) 50vw, 380px"><img src="images/svc-farm-960.jpg" srcset="images/svc-farm-640.jpg 640w, images/svc-farm-960.jpg 960w" sizes="(max-width: 720px) 100vw, (max-width: 1024px) 50vw, 380px" width="1600" height="1067" alt="Young crop seedlings growing in rich soil" loading="lazy" decoding="async" style="object-position:50% 60%"></picture></div>
         <div class="service__body">
           <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-sprout"/></svg></span>
           <span class="service__num">01</span>
@@ -173,7 +176,7 @@
       </article>
 
       <article class="card service">
-        <div class="media ph ph--b" role="img" aria-label="Consultant and farmer"><span class="ph__tag">Photo · Consultant and farmer</span></div>
+        <div class="media"><picture><source type="image/webp" srcset="images/svc-consult-626.webp 626w" sizes="(max-width: 720px) 100vw, (max-width: 1024px) 50vw, 380px"><img src="images/svc-consult-626.jpg" srcset="images/svc-consult-626.jpg 626w" sizes="(max-width: 720px) 100vw, (max-width: 1024px) 50vw, 380px" width="626" height="417" alt="Two people shake hands in a field, one holding a tablet" loading="lazy" decoding="async" style="object-position:50% 45%"></picture></div>
         <div class="service__body">
           <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-clipboard"/></svg></span>
           <span class="service__num">02</span>
@@ -184,7 +187,7 @@
       </article>
 
       <article class="card service">
-        <div class="media ph ph--d" role="img" aria-label="Field training session"><span class="ph__tag">Photo · Field training session</span></div>
+        <div class="media"><picture><source type="image/webp" srcset="images/svc-training-640.webp 640w, images/svc-training-960.webp 960w" sizes="(max-width: 720px) 100vw, (max-width: 1024px) 50vw, 380px"><img src="images/svc-training-960.jpg" srcset="images/svc-training-640.jpg 640w, images/svc-training-960.jpg 960w" sizes="(max-width: 720px) 100vw, (max-width: 1024px) 50vw, 380px" width="1536" height="1024" alt="A trainer teaching a group of farmers in a rubber plantation" loading="lazy" decoding="async" style="object-position:50% 40%"></picture></div>
         <div class="service__body">
           <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-people"/></svg></span>
           <span class="service__num">03</span>
@@ -195,7 +198,7 @@
       </article>
 
       <article class="card service">
-        <div class="media ph ph--c" role="img" aria-label="Completed building"><span class="ph__tag">Photo · Completed building</span></div>
+        <div class="media"><picture><source type="image/webp" srcset="images/svc-build-640.webp 640w, images/svc-build-960.webp 960w" sizes="(max-width: 720px) 100vw, (max-width: 1024px) 50vw, 380px"><img src="images/svc-build-960.jpg" srcset="images/svc-build-640.jpg 640w, images/svc-build-960.jpg 960w" sizes="(max-width: 720px) 100vw, (max-width: 1024px) 50vw, 380px" width="1600" height="1067" alt="Design of a green single-storey building with a dark hip roof" loading="lazy" decoding="async" style="object-position:50% 50%"></picture></div>
         <div class="service__body">
           <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-building"/></svg></span>
           <span class="service__num">04</span>
@@ -206,9 +209,7 @@
       </article>
 
       <article class="card service">
-        <div class="media" role="img" aria-label="Tractor working a green field">
-          <img src="images/agriculture-tractor.webp" alt="Tractor working a green field" width="900" height="506" loading="lazy">
-        </div>
+        <div class="media"><picture><source type="image/webp" srcset="images/svc-tools-640.webp 640w, images/svc-tools-960.webp 960w" sizes="(max-width: 720px) 100vw, (max-width: 1024px) 50vw, 380px"><img src="images/svc-tools-960.jpg" srcset="images/svc-tools-640.jpg 640w, images/svc-tools-960.jpg 960w" sizes="(max-width: 720px) 100vw, (max-width: 1024px) 50vw, 380px" width="1600" height="1067" alt="A green tractor with a front loader working a field" loading="lazy" decoding="async" style="object-position:45% 50%"></picture></div>
         <div class="service__body">
           <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-gear"/></svg></span>
           <span class="service__num">05</span>
@@ -219,7 +220,7 @@
       </article>
 
       <article class="card service">
-        <div class="media ph ph--e" role="img" aria-label="Open farmland"><span class="ph__tag">Photo · Open farmland</span></div>
+        <div class="media"><picture><source type="image/webp" srcset="images/svc-land-640.webp 640w, images/svc-land-960.webp 960w" sizes="(max-width: 720px) 100vw, (max-width: 1024px) 50vw, 380px"><img src="images/svc-land-960.jpg" srcset="images/svc-land-640.jpg 640w, images/svc-land-960.jpg 960w" sizes="(max-width: 720px) 100vw, (max-width: 1024px) 50vw, 380px" width="1600" height="1067" alt="Rows of young maize on farmland beside a settlement" loading="lazy" decoding="async" style="object-position:50% 65%"></picture></div>
         <div class="service__body">
           <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
           <span class="service__num">06</span>
@@ -230,7 +231,7 @@
       </article>
 
       <article class="card service span-last">
-        <div class="media ph ph--d" role="img" aria-label="Training session on traceability and compliance"><span class="ph__tag">Photo · Compliance training session</span></div>
+        <div class="media"><picture><source type="image/webp" srcset="images/svc-eudr-640.webp 640w, images/svc-eudr-960.webp 960w, images/svc-eudr-1280.webp 1280w" sizes="(max-width: 720px) 100vw, (max-width: 1024px) 50vw, 600px"><img src="images/svc-eudr-960.jpg" srcset="images/svc-eudr-640.jpg 640w, images/svc-eudr-960.jpg 960w, images/svc-eudr-1280.jpg 1280w" sizes="(max-width: 720px) 100vw, (max-width: 1024px) 50vw, 600px" width="1536" height="1024" alt="Aerial view of a rubber plantation beside forest at sunrise, with location pins marking the plots" loading="lazy" decoding="async" style="object-position:50% 55%"></picture></div>
         <div class="service__body">
           <span class="icon-box icon-box--gold"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span>
           <span class="service__num">07</span>
@@ -245,7 +246,7 @@
 </section>
 
 <!-- ============ PROJECTS + TESTIMONIAL ============ -->
-<!-- TODO: replace all [bracketed] placeholders with real projects and a real client quote -->
+<!-- TODO: replace the testimonial placeholder with a real client quote. Confirm consent from the people shown in the project photos. -->
 <section class="section section--dark">
   <div class="container">
     <div class="section-head section-head--stack">
@@ -255,27 +256,27 @@
 
     <div class="grid-3 projects">
       <article class="card card--dark project">
-        <div class="media ph ph--a" role="img" aria-label="Project photo"><span class="ph__tag">Photo · Project</span></div>
+        <div class="media"><picture><source type="image/webp" srcset="images/proj-labour-640.webp 640w, images/proj-labour-960.webp 960w, images/proj-labour-1280.webp 1280w" sizes="(max-width: 720px) 100vw, (max-width: 1024px) 50vw, 380px"><img src="images/proj-labour-960.jpg" srcset="images/proj-labour-640.jpg 640w, images/proj-labour-960.jpg 960w, images/proj-labour-1280.jpg 1280w" sizes="(max-width: 720px) 100vw, (max-width: 1024px) 50vw, 380px" width="1280" height="792" alt="Completed single-storey labour line with a green metal roof and orange-trimmed walls" loading="lazy" decoding="async" style="object-position:50% 50%"></picture></div>
         <div class="project__body">
-          <span class="chip chip--gold">[Service type]</span>
-          <h3 class="h3">[Project name]</h3>
-          <span class="muted-light">[Location] · [Year]</span>
+          <span class="chip chip--gold">Civil / Building Construction</span>
+          <h3 class="h3">Labour line build at Iguobazuwa site of RENL</h3>
+          <span class="muted-light">Edo State · 2012</span>
         </div>
       </article>
       <article class="card card--dark project">
-        <div class="media ph ph--c" role="img" aria-label="Project photo"><span class="ph__tag">Photo · Project</span></div>
+        <div class="media"><picture><source type="image/webp" srcset="images/proj-training-640.webp 640w, images/proj-training-960.webp 960w, images/proj-training-1280.webp 1280w" sizes="(max-width: 720px) 100vw, (max-width: 1024px) 50vw, 380px"><img src="images/proj-training-960.jpg" srcset="images/proj-training-640.jpg 640w, images/proj-training-960.jpg 960w, images/proj-training-1280.jpg 1280w" sizes="(max-width: 720px) 100vw, (max-width: 1024px) 50vw, 380px" width="1280" height="960" alt="Farm staff seated in a circle in a rubber plantation during a field training session" loading="lazy" decoding="async" style="object-position:50% 55%"></picture></div>
         <div class="project__body">
-          <span class="chip chip--gold">[Service type]</span>
-          <h3 class="h3">[Project name]</h3>
-          <span class="muted-light">[Location] · [Year]</span>
+          <span class="chip chip--gold">Human Capacity Development</span>
+          <h3 class="h3">Farm staff field training (Okomu)</h3>
+          <span class="muted-light">Edo State · 2026</span>
         </div>
       </article>
       <article class="card card--dark project">
-        <div class="media ph ph--d" role="img" aria-label="Project photo"><span class="ph__tag">Photo · Project</span></div>
+        <div class="media"><picture><source type="image/webp" srcset="images/proj-eudr-640.webp 640w, images/proj-eudr-960.webp 960w, images/proj-eudr-1080.webp 1080w" sizes="(max-width: 720px) 100vw, (max-width: 1024px) 50vw, 380px"><img src="images/proj-eudr-960.jpg" srcset="images/proj-eudr-640.jpg 640w, images/proj-eudr-960.jpg 960w, images/proj-eudr-1080.jpg 1080w" sizes="(max-width: 720px) 100vw, (max-width: 1024px) 50vw, 380px" width="1080" height="810" alt="PMIS team and plant staff in hard hats at the Imoniyame processing site" loading="lazy" decoding="async" style="object-position:50% 30%"></picture></div>
         <div class="project__body">
-          <span class="chip chip--gold">[Service type]</span>
-          <h3 class="h3">[Project name]</h3>
-          <span class="muted-light">[Location] · [Year]</span>
+          <span class="chip chip--gold">EUDR Training &amp; Audit</span>
+          <h3 class="h3">EUDR audit (Imoniyame)</h3>
+          <span class="muted-light">Delta State · 2026</span>
         </div>
       </article>
     </div>
@@ -288,14 +289,14 @@
 </section>
 
 <!-- ============ PARTNERS ============ -->
-<!-- TODO: swap the text wordmarks for the real logos (use <img> in greyscale, same height) -->
+<!-- Client logos: shown with permission. Confirm each organisation agrees to its logo being used. -->
 <section class="section section--partners">
   <div class="container">
     <h2 class="h2 h2--sm center">Our partners and collaborators</h2>
     <ul class="partners">
-      <li class="partner">IMONIYAME</li>
-      <li class="partner">OKOMU</li>
-      <li class="partner partner--long">RUBBER RESEARCH INSTITUTE OF NIGERIA</li>
+      <li class="partner"><img class="partner__logo partner__logo--imoniyame" src="images/logo-imoniyame.png" width="720" height="131" alt="Imoniyame Holdings" loading="lazy" decoding="async"></li>
+      <li class="partner"><img class="partner__logo partner__logo--okomu" src="images/logo-okomu.png" width="352" height="177" alt="Okomu Oil Palm Company PLC" loading="lazy" decoding="async"></li>
+      <li class="partner"><img class="partner__logo partner__logo--rrin" src="images/logo-rrin.png" width="512" height="145" alt="Rubber Research Institute of Nigeria" loading="lazy" decoding="async"></li>
     </ul>
   </div>
 </section>

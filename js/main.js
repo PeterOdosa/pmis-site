@@ -142,33 +142,69 @@
     if (!live) { var pend = document.getElementById('pay-pending'); if (pend) pend.classList.add('is-shown'); }
   }
 
-  // Scroll-to-top button
-  (function () {
-    var btn = document.createElement('button');
-    btn.id = 'scroll-top';
-    btn.setAttribute('aria-label', 'Back to top');
-    btn.setAttribute('type', 'button');
-    btn.innerHTML = '<svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 16l6-6 6 6"/></svg>';
-    document.body.appendChild(btn);
-
-    var onScroll = function () {
-      btn.classList.toggle('is-visible', window.scrollY > 300);
+  // Count-up numbers: <span class="stat__num" data-count="1000" data-suffix="+"> or data-since="2010"
+  var nums = document.querySelectorAll('.stat__num[data-count], .stat__num[data-since]');
+  if (nums.length) {
+    var fmt = function (n) { return Math.round(n).toLocaleString('en-US'); };
+    var target = function (el) {
+      return el.hasAttribute('data-since') ? new Date().getFullYear() - parseInt(el.getAttribute('data-since'), 10) : parseFloat(el.getAttribute('data-count'));
     };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-
-    btn.addEventListener('click', function () {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Final value for screen readers, so they never hear half-counted numbers
+    nums.forEach(function (el) {
+      var end = fmt(target(el)) + (el.getAttribute('data-suffix') || '');
+      el.textContent = end;
+      var sr = document.createElement('span');
+      sr.className = 'sr-only'; sr.textContent = end;
+      el.setAttribute('aria-hidden', 'true');
+      el.parentNode.insertBefore(sr, el.nextSibling);
     });
-
-    // Escape closes the button focus
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && document.activeElement === btn) {
-        btn.blur();
-      }
-    });
-  })();
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce && 'IntersectionObserver' in window) {
+      var run = function (el) {
+        var end = target(el), suffix = el.getAttribute('data-suffix') || '', dur = 1800, t0 = null;
+        el.textContent = '0' + suffix;
+        var step = function (ts) {
+          if (t0 === null) t0 = ts;
+          var p = Math.min((ts - t0) / dur, 1);
+          el.textContent = fmt(end * (1 - Math.pow(1 - p, 3))) + suffix;   // ease-out
+          if (p < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      };
+      nums.forEach(function (el) { el.textContent = '0' + (el.getAttribute('data-suffix') || ''); });
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { io.unobserve(en.target); run(en.target); } });
+      }, { threshold: 0.4 });
+      nums.forEach(function (el) { io.observe(el); });
+    }
+  }
 
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
+
+  // Back-to-top button (created here so every page gets it)
+  (function () {
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'to-top';
+    btn.setAttribute('aria-label', 'Back to top');
+    btn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+    document.body.appendChild(btn);
+    var ticking = false;
+    function update() {
+      btn.classList.toggle('is-visible', window.scrollY > 600);
+      ticking = false;
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    btn.addEventListener('click', function () {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+      var skip = document.querySelector('a[href="#main"], .skip');
+      document.body.setAttribute('tabindex', '-1');
+      document.body.focus({ preventScroll: true });
+    });
+    update();
+  })();
 })();
